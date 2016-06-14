@@ -7,4 +7,8 @@ ruby '2.1.5'
  gem "rspec-sinatra"
  gem "capybara"
  gem 'data_mapper'
-gem 'dm-postgres-adapter'
+ gem 'dm-postgres-adapter'
+
+ group :test do
+   gem 'database_cleaner'
+ end
