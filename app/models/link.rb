@@ -1,6 +1,5 @@
 require 'data_mapper'
 require 'dm-postgres-adapter'
-require 'data_mapper_setup.rb'
 
 class Link
 
@@ -9,7 +8,11 @@ class Link
   property :id, Serial
   property :title, String
   property :url, String
-
+  
+  has n, :tags, through: Resource
 end
+
+
+
 
 
