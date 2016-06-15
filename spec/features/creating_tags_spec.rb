@@ -11,7 +11,20 @@ feature "add tag" do
 
     within "ul#links" do
     link = Link.first
+    p link.tags
     expect(link.tags.map(&:name)).to include('cats')
    end
+  end
+
+  scenario "adding multple tags" do
+    visit('links/new')
+    fill_in :url, with: "https://www.apoorva.com"
+    fill_in :title, with: "apoorva"
+    fill_in :tags, with: "cats dogs"
+    click_button "Add New Link"
+    expect(current_path).to eq "/links"
+
+    link = Link.first
+    expect(link.tags.map(&:name)).to include('cats', 'dogs' )
   end
 end
