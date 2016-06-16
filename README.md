@@ -1,28 +1,24 @@
-# bookmark-manager
+# Bookmark Manager
 
 
-User stories:
-
+## User Stories
 ```
-As a user
-So that I can quickly access my favourite websites
-I would like a list of links to these sites
+As a User
+To remind me of websites I'm interested in
+I want to see a list of links for them
 ```
-
 ```
-As a user
-So that I can save the link to a website
-I would like to add an entry for the link to the bookmark list
+As a User
+So that I can track additional websites I'm interested in
+I want to be able to add more links
 ```
-
 ```
-As a user
-So that I can categorise links
-I would like to add tags to bookmarks
+As a User
+So that I can file types of links
+I want to be able to tag them
 ```
-
 ```
-As a user
-So that I can easily search for bookmarks
-I would like to be able to filter bookmarks based on tags
+As a User
+So that I can search link types
+I can filter links by their tags
 ```
