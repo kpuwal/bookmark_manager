@@ -7,13 +7,16 @@ class User
   attr_accessor :password_confirmation
 
   property :id, Serial
-  property :email, String
+  property :email, String, required: true, format: :email_address, unique: true
   property :password_digest, String, length: 60
 
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
   end
+
+
+
 
   validates_confirmation_of :password
 
