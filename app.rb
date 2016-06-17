@@ -7,6 +7,7 @@ require_relative 'data_mapper_setup'
 
 
 class BookMarkM < Sinatra::Base
+  use Rack::MethodOverride
   enable :sessions
   set :session_secret, 'super secret'
   register Sinatra::Flash
@@ -30,6 +31,12 @@ class BookMarkM < Sinatra::Base
 
   get '/sessions/new' do
     erb :'sessions/new'
+  end
+
+  delete '/sessions' do 
+      session[:user_id] = nil
+      flash.keep[:notice] = ['You have signed out']
+      redirect to('/links')
   end
 
   post '/sessions' do
