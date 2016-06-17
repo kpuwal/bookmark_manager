@@ -1,4 +1,4 @@
-feature 'use a sing out' do
+feature 'User sing out' do
    let!(:user) do
     User.create(email: 'user@example.com',
                 password: 'secret1234',
